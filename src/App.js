@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Front from './Components/Front.js'
+import Check from './Components/Check.js';
+import './style.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+  Link
+} from "react-router-dom";
+import { render } from 'react-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  if(localStorage.getItem("validated")=="yes" || sessionStorage.getItem('validated')=='yes'){
+    return (
+      <div>
+        <Front></Front>
+      </div>
+    )
+  }else{
+      return(
+        <div><Check></Check></div>
+      )
+  }
 }
 
 export default App;
