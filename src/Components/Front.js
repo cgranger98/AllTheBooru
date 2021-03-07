@@ -32,7 +32,9 @@ class Front  extends Component {
                return response.json()
                })
           .then(data=>{
-			  
+			  if(data.length==0){
+				  document.getElementById('error').innerHTML="No results were found"
+			  }
 			if(this.state.site=='atf'){
 				this.setState({
 					'picture':data
@@ -92,8 +94,9 @@ class Front  extends Component {
 								<label htmlFor="radio-e621">E621</label>
 								<div className="row">
 								<input id="inputSearch" name="inputSearch" type="text" onChange={this.handleSearch} className="rounded col" placeholder="Buscar"/>
-								<button className="btn btn-primary rounded-pill col-3" type="submit">Buscar</button> 
+								<button className="btn btn-primary rounded-pill col-md-4 col-xs-12" type="submit">Buscar</button> 
 								</div>
+								<strong><span className="text-danger" id="error"></span></strong>
 							</div>
 							</form>
 					</div>
