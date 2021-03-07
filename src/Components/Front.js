@@ -22,9 +22,9 @@ class Front  extends Component {
 		e.preventDefault();	
 		var json
 		if(this.state.site=='atf'){
-			json ='https://booru.allthefallen.moe/posts.json?tags='+this.state.search+'&is_deleted=false&is_banned=false&limit=10'
+			json ='https://booru.allthefallen.moe/posts.json?tags='+this.state.search+'&is_deleted=false&is_banned=false&limit=100'
 		}else{
-			json ='https://e621.net/posts.json?login=nena90&api_key=Hb8qjSoFtSRxSPSaezVVJZQC&tags='+this.state.search+' -flash&limit=10'; 
+			json ='https://e621.net/posts.json?login=nena90&api_key=Hb8qjSoFtSRxSPSaezVVJZQC&tags='+this.state.search+' -flash&limit=100'; 
 		}
 		
         //fetch(json url).then(response=>{return response.json()}).then(data=>{what to do}).catch(error=>{what to do})
